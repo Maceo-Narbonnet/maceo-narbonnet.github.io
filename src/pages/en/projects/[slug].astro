@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import Project from '../../../templates/Project.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('projects', (p) => p.data.lang === 'en');
+  return entries.map((entry) => ({ params: { slug: entry.data.key }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<Project lang="en" entry={entry} />

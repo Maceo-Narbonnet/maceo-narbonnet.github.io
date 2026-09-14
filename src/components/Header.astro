@@ -1,0 +1,47 @@
+---
+import { content, profile, paths, type Lang } from '../data/site';
+
+interface Props {
+  lang: Lang;
+  altHref: string;
+}
+const { lang, altHref } = Astro.props;
+const t = content[lang];
+const home = paths.home[lang];
+const anchors = lang === 'fr'
+  ? { projects: `${home}#projets`, about: `${home}#parcours`, skills: `${home}#competences`, contact: `${home}#contact` }
+  : { projects: `${home}#projects`, about: `${home}#background`, skills: `${home}#skills`, contact: `${home}#contact` };
+const frHref = lang === 'fr' ? Astro.url.pathname : altHref;
+const enHref = lang === 'en' ? Astro.url.pathname : altHref;
+---
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href={home} aria-label={profile.name}>
+      <span class="dot"></span>
+      <span>maceo.narbonnet</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">☰</button>
+    <nav class="nav" id="site-nav">
+      <a href={anchors.projects}>{t.nav.projects}</a>
+      <a href={anchors.about}>{t.nav.about}</a>
+      <a href={anchors.skills}>{t.nav.skills}</a>
+      <a href={anchors.contact}>{t.nav.contact}</a>
+      <a class="cv-link" href={profile.cv[lang]} target="_blank" rel="noopener">{t.nav.cv} ↗</a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href={frHref} aria-current={lang === 'fr' ? 'true' : undefined} lang="fr">FR</a>
+        <a href={enHref} aria-current={lang === 'en' ? 'true' : undefined} lang="en">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const nav = document.getElementById('site-nav');
+  btn?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(!!open));
+  });
+  nav?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => nav.classList.remove('open')));
+</script>

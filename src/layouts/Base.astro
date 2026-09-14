@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { content, profile, type Lang } from '../data/site';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  altHref: string; // URL of the same page in the other language
+  ogImage?: string;
+}
+
+const { lang, title, description, altHref, ogImage = '/img/og.png' } = Astro.props;
+const t = content[lang];
+const pageTitle = title ? `${title} — ${profile.name}` : t.meta.title;
+const pageDesc = description ?? t.meta.description;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const other: Lang = lang === 'fr' ? 'en' : 'fr';
+---
+
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <meta name="author" content={profile.name} />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0d12" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    <link rel="alternate" hreflang={other} href={new URL(altHref, Astro.site)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: profile.name,
+      url: Astro.site?.toString(),
+      email: profile.email,
+      sameAs: [profile.github, profile.linkedin],
+      jobTitle: lang === 'fr' ? 'Élève ingénieur en informatique' : 'Computer engineering student',
+      affiliation: { '@type': 'CollegeOrUniversity', name: 'Université de Technologie de Compiègne' },
+    })} />
+  </head>
+  <body>
+    <Header lang={lang} altHref={altHref} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

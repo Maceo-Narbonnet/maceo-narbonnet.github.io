@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { content, paths, type Lang } from '../data/site';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  lang: Lang;
+  featured?: boolean;
+}
+const { project, lang, featured = false } = Astro.props;
+const d = project.data;
+const t = content[lang].project;
+const href = paths.project(lang, d.key);
+---
+
+<a class:list={['card', 'reveal', { featured }]} href={href}>
+  <div class="cover">
+    <img src={d.cover} alt={d.coverAlt} loading="lazy" decoding="async" class:list={[{ contain: d.coverFit === 'contain' }]} />
+  </div>
+  <div class="body">
+    <div class="kind">
+      <span>{d.kind === 'internship' ? t.internship : t.project}</span>
+      <span>{d.period}</span>
+    </div>
+    <h3>{d.title}</h3>
+    <p class="tagline">{d.tagline}</p>
+    {featured && d.results.length > 0 && (
+      <div class="results">
+        {d.results.slice(0, 3).map((r) => (
+          <div><b>{r.value}</b>{r.label}</div>
+        ))}
+      </div>
+    )}
+    <div class="tags">
+      {d.tags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+    <span class="more">
+      {t.readMore}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+    </span>
+  </div>
+</a>
