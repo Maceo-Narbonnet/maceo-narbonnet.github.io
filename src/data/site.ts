@@ -38,9 +38,8 @@ export const content: Record<
     nav: { projects: string; about: string; skills: string; contact: string; cv: string };
     hero: {
       kicker: string;
-      title: string;
-      subtitle: string;
-      availability: string;
+      domainsLabel: string;
+      domains: { name: string; detail: string }[];
       ctaProjects: string;
       ctaCv: string;
       location: string;
@@ -67,11 +66,16 @@ export const content: Record<
     },
     nav: { projects: 'Projets', about: 'Parcours', skills: 'Compétences', contact: 'Contact', cv: 'CV' },
     hero: {
-      kicker: 'Élève ingénieur · UTC · Génie informatique',
-      title: 'Je conçois des systèmes qui perçoivent et décident.',
-      subtitle:
-        "Vision par ordinateur, robotique et temps réel embarqué : de la calibration de caméras à l'ordonnanceur préemptif, je construis des chaînes complètes — capteurs, algorithmes, mesure de l'erreur.",
-      availability: 'Stage de fin d’études · 6 mois · dès février/mars 2027',
+      kicker: 'Élève ingénieur · UTC · Génie informatique · Informatique embarquée & systèmes autonomes',
+      domainsLabel: 'Domaines sur lesquels j’ai travaillé',
+      domains: [
+        { name: 'Vision par ordinateur', detail: 'calibration multi-caméras, triangulation, détection d’objets, suivi' },
+        { name: 'Capture de mouvement & reconstruction 3D', detail: 'estimation de pose (YOLO, RTMPose), évaluation vs Vicon' },
+        { name: 'Robotique & fusion de capteurs', detail: 'ROS 2, LiDAR, IMU, encodeurs, odométrie ICP' },
+        { name: 'Systèmes embarqués & temps réel', detail: 'ordonnancement préemptif, mutex, ARM Cortex-M7, bare-metal' },
+        { name: 'Apprentissage automatique', detail: 'Random Forest, LSTM, hard negative mining, métriques d’évaluation' },
+        { name: 'Génie logiciel', detail: 'C, C++, Python, POO, Qt, Git' },
+      ],
       ctaProjects: 'Voir les projets',
       ctaCv: 'Télécharger le CV',
       location: 'Compiègne, France · Erasmus Västerås, Suède (2026–27)',
@@ -195,11 +199,16 @@ export const content: Record<
     },
     nav: { projects: 'Projects', about: 'Background', skills: 'Skills', contact: 'Contact', cv: 'Resume' },
     hero: {
-      kicker: 'Engineering student · UTC · Computer Engineering',
-      title: 'I build systems that perceive and decide.',
-      subtitle:
-        'Computer vision, robotics and embedded real-time: from camera calibration to preemptive schedulers, I build complete pipelines — sensors, algorithms, and honest error measurement.',
-      availability: 'Final-year internship · 6 months · from February/March 2027',
+      kicker: 'Engineering student · UTC · Computer Engineering · Embedded & autonomous systems',
+      domainsLabel: 'Areas I have worked in',
+      domains: [
+        { name: 'Computer vision', detail: 'multi-camera calibration, triangulation, object detection, tracking' },
+        { name: 'Motion capture & 3D reconstruction', detail: 'pose estimation (YOLO, RTMPose), evaluation against Vicon' },
+        { name: 'Robotics & sensor fusion', detail: 'ROS 2, LiDAR, IMU, encoders, ICP odometry' },
+        { name: 'Embedded & real-time systems', detail: 'preemptive scheduling, mutexes, ARM Cortex-M7, bare-metal' },
+        { name: 'Machine learning', detail: 'Random Forest, LSTM, hard negative mining, evaluation metrics' },
+        { name: 'Software engineering', detail: 'C, C++, Python, OOP, Qt, Git' },
+      ],
       ctaProjects: 'See the projects',
       ctaCv: 'Download resume',
       location: 'Compiègne, France · Erasmus in Västerås, Sweden (2026–27)',

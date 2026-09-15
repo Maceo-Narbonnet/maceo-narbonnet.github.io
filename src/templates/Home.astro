@@ -28,10 +28,14 @@ const icons = {
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="pill">{t.hero.availability}</span>
-        <div class="eyebrow" style="margin-top:1.4rem">{t.hero.kicker}</div>
-        <h1 set:html={t.hero.title.replace(/(perçoivent et décident|perceive and decide)/, '<span class="accent">$1</span>')} />
-        <p class="lead">{t.hero.subtitle}</p>
+        <div class="eyebrow">{t.hero.kicker}</div>
+        <h1>{profile.name}</h1>
+        <p class="domains-label">{t.hero.domainsLabel}</p>
+        <ul class="domains">
+          {t.hero.domains.map((d) => (
+            <li><b>{d.name}</b><span>{d.detail}</span></li>
+          ))}
+        </ul>
         <div class="actions">
           <a class="btn btn-primary" href={`#${ids.projects}`}>
             {t.hero.ctaProjects}
