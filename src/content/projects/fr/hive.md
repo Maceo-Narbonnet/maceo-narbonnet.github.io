@@ -5,7 +5,7 @@ order: 6
 kind: project
 title: Hive — jeu de plateau en C++ avec interface Qt
 tagline: Implémentation du jeu de société Hive en C++ orienté objet, avec un plateau hexagonal dessiné en Qt.
-period: UTC · LO21
+period: oct. – déc. 2024
 context: UE LO21 — Programmation orientée objet en C++, UTC
 stack: [C++, Qt]
 tags: [C++, POO, Qt, jeu]
@@ -27,4 +27,4 @@ Ce projet, réalisé dans le cadre de l'UE **LO21** (programmation orientée obj
 - `Game` / `Pieces` — la logique du jeu : pièces, règles, déroulement de la partie.
 - `GrilleWidget` / `case` — le rendu du plateau hexagonal en Qt, avec les ressources graphiques des cinq insectes de base (abeille, araignée, fourmi, sauterelle, scarabée).
 
-Un projet d'apprentissage plus qu'une vitrine : il illustre la modélisation objet d'un jeu à règles riches et la séparation entre logique et interface. Le dépôt n'a pas encore de README détaillé.
+Un projet d'apprentissage plus qu'une vitrine : il illustre la modélisation objet d'un jeu à règles riches et la séparation entre logique et interface.

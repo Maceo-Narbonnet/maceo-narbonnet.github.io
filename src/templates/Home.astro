@@ -154,7 +154,7 @@ const icons = {
         <div>
           <div class="eyebrow">04</div>
           <h2>{t.contact.title}</h2>
-          <p>{t.contact.text}</p>
+          {t.contact.text && <p>{t.contact.text}</p>}
         </div>
         <div class="contact-links">
           <a class="btn btn-primary" href={`mailto:${profile.email}`}>

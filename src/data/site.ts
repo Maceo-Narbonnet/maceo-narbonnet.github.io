@@ -3,7 +3,6 @@ export type Lang = 'fr' | 'en';
 export const profile = {
   name: 'Macéo Narbonnet',
   email: 'maceo.narbonnet@etu.utc.fr',
-  phone: '+33 6 95 13 93 03',
   github: 'https://github.com/Maceo-Narbonnet',
   githubHandle: 'Maceo-Narbonnet',
   linkedin: 'https://www.linkedin.com/in/mac%C3%A9o-narbonnet-080676334/',
@@ -97,7 +96,6 @@ export const content: Record<
     },
     about: [
       "Je suis en cycle ingénieur en Génie Informatique à l'Université de Technologie de Compiègne, spécialité Informatique Embarquée et Systèmes Autonomes, après une classe préparatoire TSI.",
-      "Ce qui me plaît : les systèmes où le logiciel rencontre le monde physique — des caméras qu'il faut calibrer, des capteurs à fusionner, des tâches à ordonnancer avec des garanties temporelles. Et une exigence commune à tous mes projets : mesurer avant d'optimiser.",
       "Je passe l'automne 2026 à Mälardalen University (Suède) et je cherche un stage de fin d'études de 6 mois à partir de février/mars 2027, en embarqué, robotique, vision par ordinateur ou IA appliquée. Les secteurs de la défense et de la sécurité m'intéressent tout particulièrement.",
     ],
     experience: [
@@ -167,8 +165,8 @@ export const content: Record<
     languages: 'Français (langue maternelle) · Anglais (C1) · Italien (A2)',
     interests: ['Directeur sportif du BDS UTC (22 clubs, 150 sportifs en compétition)', 'Responsable tennis & capitaine de l’équipe UTC', 'Responsable communication puis matériel de l’association audiovisuelle', 'WWOOFing au Canada (Vancouver)'],
     contact: {
-      title: 'Discutons.',
-      text: 'Un stage, un projet, une question technique sur l’un de ces travaux : écrivez-moi, je réponds vite.',
+      title: 'Contact',
+      text: '',
       email: 'Envoyer un e-mail',
       linkedin: 'LinkedIn',
       github: 'GitHub',
@@ -230,7 +228,6 @@ export const content: Record<
     },
     about: [
       "I am a computer engineering student at Université de Technologie de Compiègne (UTC), specialising in Embedded and Autonomous Systems, after two years of French preparatory classes (CPGE TSI).",
-      'What I enjoy: systems where software meets the physical world — cameras to calibrate, sensors to fuse, tasks to schedule under timing guarantees. And one discipline shared by all my projects: measure before you optimise.',
       'I am spending autumn 2026 at Mälardalen University (Sweden) and I am looking for a 6-month final-year internship starting February/March 2027, in embedded systems, robotics, computer vision or applied AI. Defence and security are sectors I care about in particular.',
     ],
     experience: [
@@ -300,8 +297,8 @@ export const content: Record<
     languages: 'French (native) · English (C1) · Italian (A2)',
     interests: ['Head of Sports, UTC student sports association (22 clubs, 150 competing athletes)', 'Tennis lead & captain of the UTC team', 'Communications then equipment manager, student audiovisual association', 'WWOOFing in Canada (Vancouver)'],
     contact: {
-      title: "Let's talk.",
-      text: 'An internship, a project, a technical question about any of this work: drop me a line, I answer quickly.',
+      title: 'Contact',
+      text: '',
       email: 'Send an e-mail',
       linkedin: 'LinkedIn',
       github: 'GitHub',

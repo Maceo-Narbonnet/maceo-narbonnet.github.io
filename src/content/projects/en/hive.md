@@ -5,7 +5,7 @@ order: 6
 kind: project
 title: Hive — a C++ board game with a Qt interface
 tagline: An object-oriented C++ implementation of the board game Hive, with a hexagonal board drawn in Qt.
-period: UTC · LO21
+period: Oct. – Dec. 2024
 context: LO21 — Object-oriented programming in C++, UTC
 stack: [C++, Qt]
 tags: [C++, OOP, Qt, game]
@@ -27,4 +27,4 @@ This project, carried out for the **LO21** course (object-oriented programming),
 - `Game` / `Pieces` — the game logic: pieces, rules, game flow.
 - `GrilleWidget` / `case` — the hexagonal board rendering in Qt, with the graphic assets of the five basic insects (bee, spider, ant, grasshopper, beetle).
 
-A learning project more than a showcase: it illustrates the object modelling of a rule-rich game and the separation between logic and interface. The repository does not have a detailed README yet.
+A learning project more than a showcase: it illustrates the object modelling of a rule-rich game and the separation between logic and interface.
