@@ -43,7 +43,6 @@ export const content: Record<
       ctaCv: string;
       location: string;
     };
-    stats: { value: string; label: string }[];
     sections: { projects: string; projectsSub: string; about: string; experience: string; education: string; skills: string; contact: string };
     about: string[];
     experience: Experience[];
@@ -79,12 +78,6 @@ export const content: Record<
       ctaCv: 'Télécharger le CV',
       location: 'Compiègne, France · Erasmus Västerås, Suède (2026–27)',
     },
-    stats: [
-      { value: '15,6 mm', label: 'précision d’une capture de mouvement sans marqueurs vs Vicon' },
-      { value: '×3', label: 'AP d’un détecteur de panneaux, sans deep learning' },
-      { value: '4', label: 'caméras calibrées et triangulées en 3D' },
-      { value: '7,6° → 5,2°', label: 'erreur angulaire après filtrage, LSTM et correction OpenSim' },
-    ],
     sections: {
       projects: 'Projets',
       projectsSub: 'Cinq travaux documentés, du capteur au résultat mesuré.',
@@ -211,12 +204,6 @@ export const content: Record<
       ctaCv: 'Download resume',
       location: 'Compiègne, France · Erasmus in Västerås, Sweden (2026–27)',
     },
-    stats: [
-      { value: '15.6 mm', label: 'accuracy of a markerless motion capture pipeline vs Vicon' },
-      { value: '×3', label: 'AP of a traffic-sign detector built without deep learning' },
-      { value: '4', label: 'cameras calibrated and triangulated in 3D' },
-      { value: '7.6° → 5.2°', label: 'joint-angle error after filtering, LSTM and OpenSim correction' },
-    ],
     sections: {
       projects: 'Projects',
       projectsSub: 'Five documented pieces of work, from sensor to measured result.',
